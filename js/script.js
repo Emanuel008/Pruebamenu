@@ -1,7 +1,7 @@
 //
 //
 //
-//
+// variantes
 
 var checkOut = {};
 var isCartPage;
@@ -21,9 +21,7 @@ class FoodObject{
     }
 }
 
-/**
- * Generate array on page creation
- */
+// array que tiene la informacion desde el json
 
 $(()=>{ 
     $.getJSON("js/menu.json", function(data){
@@ -62,7 +60,7 @@ $(()=>{
 });
 
 
-// End page creation
+// funciones
 
 
 function isInStock(stock){
@@ -80,7 +78,6 @@ function openClose(srt){
     }
 }
 
-//
 function populateMenu(){
     let addStyle = "";
     let addClass = "notInStock"
@@ -134,9 +131,6 @@ function mousePopupSorry(isOver){
     }
 }
 
-/**
- * Increase "item quantity" and reward user with success animation
- */
 function addItemPopup(){
     let dirOffset = Math.random() * 50;
     let popupBox = $('<div id="popupMsgAdded">Added!</div>');
@@ -155,7 +149,7 @@ function addItemPopup(){
         popupBox.remove();
     });   
 
-    let itemName = $(event.target).attr('name'); //item3
+    let itemName = $(event.target).attr('name'); 
     let itemQty = $("#"+ itemName);
     let itemInt = parseInt(itemQty.html());
     if(itemInt == 0){
@@ -163,16 +157,13 @@ function addItemPopup(){
     }
     itemInt++;
     localStorage.setItem(itemName, itemInt);
-    checkOut[itemName] = itemInt; //Add to checkout Object
+    checkOut[itemName] = itemInt; 
     itemQty.html(itemInt);
 
     updateCheckout();
     event.stopPropagation();
 }
 
-/**
- * Decrease "item quantity" and remove  at item number == 0
- */
 function rmvItem(rmv){
     let itemName = "item"+rmv;
     let dirOffset = Math.random() * 50;
@@ -195,10 +186,10 @@ function rmvItem(rmv){
     let itemQty = $("#"+itemName);
     let itemInt = parseInt(itemQty.html());
     itemInt--;
-    localStorage.setItem(itemName, itemInt);  //Update local storage for item
-    checkOut[itemName] = itemInt; //Add to checkout Object
+    localStorage.setItem(itemName, itemInt); 
+    checkOut[itemName] = itemInt; 
     if(itemInt <= 0){
-        itemInt = 0; //reduce possibility of values < 0
+        itemInt = 0; 
         delete(checkOut[itemName]);
         $("."+itemName).css("visibility", "hidden");
     }
@@ -209,9 +200,6 @@ function rmvItem(rmv){
     event.stopPropagation();
 }
 
-/**
- * Keep running total of items
- */
 function updateCheckout(){
     let totalItems = 0;
     for(let c in checkOut){
@@ -220,9 +208,6 @@ function updateCheckout(){
     $("#totalItems").html(totalItems);
 }
 
-/**
- * Submit from index.html
- */
 function submitCheckout(){
     let ready = false;
     let itemsInCart = "";
@@ -231,7 +216,6 @@ function submitCheckout(){
             itemsInCart +=",";
         }
         ready = true;
-        // localStorage.setItem(c, checkOut[c]);
         itemsInCart +=c;
     }
     if(ready){
@@ -247,14 +231,8 @@ function submitCheckout(){
     }
 }
 
+//funciones de cart
 
-/**
- *  -=| CART PAGE |=-
- */
-
-/**
- * Populate cart page with selections
- */
  function populateCart(){
 
 
@@ -304,10 +282,10 @@ function submitCheckout(){
     let itemQty = $("#"+itemName);
     let itemInt = parseInt(itemQty.html());
     itemInt = 0;
-    localStorage.setItem(itemName, itemInt);  //Update local storage for item
-    checkOut[itemName] = itemInt; //Add to checkout Object
+    localStorage.setItem(itemName, itemInt);  
+    checkOut[itemName] = itemInt; 
     if(itemInt <= 0){
-        itemInt = 0; //reduce possibility of values < 0
+        itemInt = 0; 
         delete(checkOut[itemName]);
         $("."+itemName).css("visibility", "hidden");
     }
