@@ -315,7 +315,6 @@ function submitCheckout(){
             </div>
             <button class="btnClass" id="backBtn">Back to Shopping</button>
      `);
-     calcTotal();
      $("#backBtn").on("click", ()=>{window.location.href = "index.html";})
  }
 
@@ -335,37 +334,10 @@ function submitCheckout(){
     }
     itemQty.html(itemInt);
 
-    if(isCartPage) calcTotal();
-    else updateCheckout();
+    
+    updateCheckout();
 
     event.stopPropagation();
  }
 
- function calcTotal(){
-    let items = $(".sumItms");
-    let hst = $("#hstAmt");
-    let grs = $("#grossBill");
-    let dsc = $("#discountAmt");
-    let final = $("#finalBillAmt");
-
-    let grossAmt = 0;
-    let hstAmt = 0;
-    let disct = 0;
-    let trueFinal = 0;
-    for(let i of items){
-        let num = parseInt(i.innerHTML);
-        grossAmt += num * foodOrder[i.id.split("item")[1]-1].price;
-    }
-    grs.html(grossAmt);
-
-    if(grossAmt >= 100) disct = 0.3;
-    else if(grossAmt >= 70) disct = 0.2;
-    else if(grossAmt >= 30) disct = 0.1;
-    dsc.html(disct*100);
-
-    hstAmt = (grossAmt*(1-disct))*0.13;
-    hst.html(hstAmt.toFixed(2));
-
-    trueFinal = (grossAmt*(1-disct)) + hstAmt;
-    final.html(trueFinal.toFixed(2));
- }
+ 
