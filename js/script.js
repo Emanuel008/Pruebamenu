@@ -294,19 +294,6 @@ function submitCheckout(){
         $(".item"+food.id).css("visibility", "visible");
         }
      }
-     $("#menuItemList").append(`
-            <div id="finalBill">
-                <div>
-                    <div>Monton</div>
-                    <div>$<span id="grossBill">0</span></div>
-                </div>
-                <div>
-                    <div>Pago Final</div>
-                    <div>$<span id="finalBillAmt">0</span></div>
-                </div>
-            </div>
-            <button class="btnClass" id="backBtn">Back to Shopping</button>
-     `);
      $("#backBtn").on("click", ()=>{window.location.href = "index.html";})
  }
 
