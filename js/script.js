@@ -297,19 +297,11 @@ function submitCheckout(){
      $("#menuItemList").append(`
             <div id="finalBill">
                 <div>
-                    <div>Gross Bill Amount</div>
+                    <div>Monton</div>
                     <div>$<span id="grossBill">0</span></div>
                 </div>
                 <div>
-                    <div>Discount</div>
-                    <div><span id="discountAmt">0</span>%</div>
-                </div>
-                <div>
-                    <div>HST</div>
-                    <div>$<span id="hstAmt">0</span></div>
-                </div>
-                <div>
-                    <div>Total</div>
+                    <div>Pago Final</div>
                     <div>$<span id="finalBillAmt">0</span></div>
                 </div>
             </div>
