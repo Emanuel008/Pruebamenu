@@ -136,7 +136,7 @@ function mousePopupSorry(isOver){
 
 function addItemPopup(){
     let dirOffset = Math.random() * 50;
-    let popupBox = $('<div id="popupMsgAdded">Added!</div>');
+    let popupBox = $('<div id="popupMsgAdded">Agregado!</div>');
     $("#mainPageArea").append(popupBox);
     let x = ($(event.target).offset().left - (1*$(event.target).width()));
     let y = ($(event.target).position().top);
@@ -170,7 +170,7 @@ function addItemPopup(){
 function rmvItem(rmv){
     let itemName = "item"+rmv;
     let dirOffset = Math.random() * 50;
-    let popupBox = $('<div id="popupMsgDropped">Dropped!</div>');
+    let popupBox = $('<div id="popupMsgDropped">Cancelado!</div>');
     $("#mainPageArea").append(popupBox);
     let x = ($(event.target).offset().left - (4*$(event.target).width()));
     let y = ($(event.target).position().top);
@@ -256,13 +256,12 @@ function submitCheckout(){
                     <div class="itemNameAndPrice">
                         <div><span>$${food.price}</span>${food.title}</div>
                     </div>
-                    
                     <div class="shopOptions">
-                        <div class="removeButton item${food.id}" onclick="RemoveItem(${food.id})">Remove</div>
+                        <div class="removeButton item${food.id}" onclick="RemoveItem(${food.id})">Cancelar</div>
                         <div class="quantity item${food.id} rmvItem" id="rmvItem(${food.id})" onclick="rmvItem(${food.id})"><span></span></div>
                         <span class="quantity sumItms item${food.id}" id="item${food.id}">${amount}</span>                    
                         <div class="baseAddBtn addToOrder" name="item${food.id}">
-                            <div class="addBtn">Add</div>
+                            <div class="addBtn">Seleccionado</div>
                         </div>
                     </div>
                 </div>
@@ -292,12 +291,12 @@ function submitCheckout(){
         delete(checkOut[itemName]);
         $("."+itemName).css("visibility", "hidden");
     }
-    itemQty.html(itemInt);
-
     
-    updateCheckout();
+     itemQty.html(itemInt);
+    
+     updateCheckout();
 
-    event.stopPropagation();
+     event.stopPropagation();
  }
 
  
