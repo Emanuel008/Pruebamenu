@@ -7,6 +7,9 @@ var checkOut = {};
 var isCartPage;
 var foodOrder = new Array();
 
+
+//constructor 
+
 class FoodObject{
     constructor(id, title, description, image, inStock, price, rating, stockColour){
         this.title = title;
@@ -102,7 +105,7 @@ function populateMenu(){
                         <div class="quantity item${f.id} rmvItem" id="rmvItem(${f.id})" onclick="rmvItem(${f.id})"><span></span></div>
                         <span class="quantity item${f.id}" id="item${f.id}">0</span>                    
                         <div class="baseAddBtn ${addClass}" name="item${f.id}">
-                            <div class="addBtn" ${addStyle}>Add</div>
+                            <div class="addBtn" ${addStyle}>agregado</div>
                         </div>
                     </div>
                 </div>
