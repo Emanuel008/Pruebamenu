@@ -6,7 +6,7 @@
       "Description":" Los ñoquis de sémola no se parecen a los tradicionales de papa pero son riquísimos y nutritivos.",
       "Image":"https://resizer.glanacion.com/resizer/xSa8ViNwaISqQ7a4yUp7XtXnbRA=/879x586/filters:quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/JMDCHQ7RVFBFVFWIFRYSLIATWY.jpg",
       "Ratings":4.5,
-      "Price" : 1100,
+      "Price" : 900,
       "In-Stock" : false
    },
    {
@@ -85,9 +85,9 @@
       "Id":10,
       "Title":"Sushi",
       "Description":"Se prepara con arroz de grano redondo, que es envuelto en algas nori junto a diferentes ingredientes. Mayoritariamente, se tratan de pescados crudos acompañados con vegetales",
-      "Image":"https://www.cocinavital.mx/wp-content/uploads/2019/03/sushi-empanizado-de-camaron.jpg",
+      "Image":"https://media.istockphoto.com/photos/set-of-sushi-and-rolls-with-salmon-and-tuna-avocado-california-maki-picture-id1066110176?k=6&m=1066110176&s=612x612&w=0&h=aD-74pTAYfFR5wQa_jGdaqa8Dzjett7Sz2vfAniSKPM=",
       "Ratings":4.0,
-      "Price" : 1600,
+      "Price" : 990,
       "In-Stock" : true
    }
 ]
