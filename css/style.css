@@ -1,0 +1,349 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* HEADER & FOOTER START*/
+header,
+footer {
+    background-color: #1A1517;
+    color: #fff;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    height: 100px;
+}
+
+footer {
+    height: 40px;
+}
+
+h2 {
+    margin: 0;
+}
+
+/* Class Information */
+.classInformation {
+    margin: 0 10px;
+}
+
+/* HEADER & FOOTER END */
+
+
+body {
+    background-image: url('https://cdnimg.webstaurantstore.com/uploads/buying_guide/2019/9/1456431.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    background-image: linear-gradient(to bottom right, #222,
+            rgba(80, 30, 50, 0.5), rgba(100, 100, 100, 0),
+            rgba(80, 30, 50, 0.5), #222);
+    height: calc(100vh - 140px);
+}
+
+#mainMenu {
+    position: relative;
+    background-image: linear-gradient(to bottom right, #CCC, #EEE, #BBB);
+    height: 94%;
+    width: 90%;
+    min-width: 300px;
+    max-width: 750px;
+    padding: 20px 0 20px 0;
+    box-sizing: border-box;
+}
+
+#topRoll,
+#botRoll {
+    position: absolute;
+    background-image: linear-gradient(to bottom right, rgb(56, 40, 33), rgb(88, 61, 49), rgb(122, 92, 72),
+            rgb(146, 114, 96), rgb(107, 82, 67), rgb(80, 57, 48), rgb(54, 36, 25));
+    /* border: 1px solid #222; */
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px #222, -1px -1px 2px #333;
+    height: 20px;
+    width: calc(100% + 10px);
+    left: -6px;
+}
+
+#topRoll {
+    top: -5px;
+}
+
+#botRoll {
+    bottom: -5px;
+}
+
+#menuItemList {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#menuItemList::-webkit-scrollbar {
+    display: none;
+}
+
+.bumper {
+    min-height: 40px;
+}
+
+#checkOut {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    background-color: #EEE;
+    background-image: linear-gradient(to bottom, #DDD, #EEE);
+    padding: 5px 10%;
+    bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    border-top: 1px solid #CCC;
+    font-weight: 800;
+}
+
+#totalItems {
+    text-shadow: 1px 1px 2px #CCC;
+}
+
+#checkOutItems,
+#checkOutBtn {
+    margin: 0 15px;
+}
+
+.btnClass {
+    font-weight: 800;
+    padding: 2px 10px;
+    border: 2px solid black;
+    box-shadow: 1px 1px 2px #555, -1px -1px 2px #999;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btnClass:hover {
+    color: #FFF;
+    background-color: #444;
+}
+
+.menuItem {
+    width: 98%;
+    box-sizing: border-box;
+    border-right: 2px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin: 3px 0;
+    background-color: none;
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+}
+
+.menuItem:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.shopOptions {
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.baseAddBtn {
+    position: relative;
+    font-weight: 600;
+    padding: 3px 15px;
+    margin-right: 10px;
+    color: #666;
+    background-color: rgb(207, 196, 188, 0.5);
+    box-shadow: 1px 1px 2px #555, -1px -1px 2px #999;
+    border-radius: 25px;
+    border: 2px solid #333;
+}
+
+.addBtn,
+.addAnim {
+    pointer-events: none;
+}
+
+.notInStock {
+    cursor: not-allowed;
+}
+
+.addToOrder {
+    color: black;
+    background-color: rgb(207, 196, 188, 0.5);
+    transition: 0.2s;
+}
+
+.addText {
+    background-color: #DFD;
+}
+
+.addToOrder:hover {
+    color: #FFF;
+    background-color: #444;
+}
+
+.rating {
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 25px;
+}
+
+.itemTitle {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+}
+
+.itemTitle span {
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    padding-right: 10px;
+    font-weight: 600;
+}
+
+.inStock {
+    color: #151;
+}
+
+.outStock {
+    color: #811;
+}
+
+.quantity {
+    visibility: hidden;
+    padding-right: 15px;
+}
+
+.itemTitle .rmvItem {
+    display: flex;
+    box-shadow: 1px 1px 1px #744, -1px -1px 1px #B88;
+    border: 1px solid #A55;
+    border-radius: 15px;
+    background-color: #C55;
+    padding: 4px;
+    height: 8px;
+    width: 8px;
+}
+
+.itemTitle .rmvItem span {
+    border-bottom: 2px solid white;
+    margin-left: -1px;
+    height: 3px;
+}
+
+.moreDescription {
+    height: 0;
+    overflow: hidden;
+    font-size: 0.9rem;
+    display: flex;
+    padding: 0px;
+}
+
+.moreDescription content {
+    padding-right: 15px;
+}
+
+.moreDescription img {
+    max-width: 30%;
+    object-fit: cover;
+    box-shadow: 1px 1px 2px black, -1px 1px 1px #444;
+}
+
+.rating {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 25px;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 3px #555;
+    border-radius: 15px;
+}
+
+
+#popupMsg {
+    display: none;
+    position: absolute;
+    color: #522;
+    font-size: 0.9rem;
+    font-weight: 800;
+    background-color: white;
+    padding: 3px 10px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+#popupMsgAdded,
+#popupMsgDropped {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    font-weight: 800;
+}
+
+#popupMsgAdded {
+    font-size: 1.1rem;
+    color: #7D8;
+    text-shadow: 1px 1px 1px #172;
+    transform: rotate(-15deg);
+}
+
+#popupMsgDropped {
+    color: #F46;
+    text-shadow: 1px 1px 1px #611;
+    transform: rotate(10deg);
+}
+
+.removeButton {
+    padding-right: 10px;
+    font-weight: 800;
+    color: #744;
+}
+
+#finalBill {
+    padding-left: 20px;
+    display: flex;
+    flex-flow: column;
+    font-weight: 800;
+    width: 100%;
+    border-top: 2px solid #555;
+}
+
+#finalBill>div {
+    width: 275px;
+    display: flex;
+    justify-content: space-between;
+}
