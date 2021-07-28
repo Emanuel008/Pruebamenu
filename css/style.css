@@ -347,3 +347,30 @@ main {
     display: flex;
     justify-content: space-between;
 }
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 1vh;
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: orange;
+    color: black;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.scroll-top-btn:hover {
+    background-color: black;
+    color: orange;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
