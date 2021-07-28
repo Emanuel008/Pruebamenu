@@ -299,4 +299,23 @@ function submitCheckout(){
      event.stopPropagation();
  }
 
- 
+//funcionalidad boton arriba
+
+scrollTopButton('.scroll-top-btn');
+
+function scrollTopButton(btn){
+    const $ScrollBtn = $(btn);
+    
+    $(window).scroll(function(){
+        let scrollTop = $(this).scrollTop();
+        console.log(scrollTop);
+        scrollTop > 300 ? $ScrollBtn.removeClass('hidden') : $ScrollBtn.addClass('hidden');
+    })
+
+    $ScrollBtn.click(function(){
+        window.scrollTo({
+            behavior: 'smooth',
+            top: 0
+        })
+    })
+}
