@@ -274,6 +274,28 @@ function submitCheckout(){
         $(".item"+food.id).css("visibility", "visible");
         }
      }
+     $("#menuItemList").append(`
+            <div id="finalBill">
+                <div>
+                    <div>Sin impuestos</div>
+                    <div>$<span id="sinimpuestos">0</span></div>
+                </div>
+                <div>
+                    <div>Descuentos</div>
+                    <div><span id="descuento">0</span>%</div>
+                </div>
+                <div>
+                    <div>Impuesto</div>
+                    <div>$<span id="impuestos">0</span></div>
+                </div>
+                <div>
+                    <div>Total</div>
+                    <div>$<span id="finalcuenta">0</span></div>
+                </div>
+            </div>
+            <button class="btnClass" id="backBtn">Volver a la tienda</button>
+     `);
+     calcTotal();
      $("#backBtn").on("click", ()=>{window.location.href = "index.html";})
  }
 
@@ -299,3 +321,33 @@ function submitCheckout(){
      event.stopPropagation();
  }
 
+//pagos
+
+function calcTotal(){
+    let items = $(".sumItms");
+    let imp = $("#impuestos");
+    let sin = $("#sinimpuesto");
+    let des = $("#descuento");
+    let final = $("#finalcuenta");
+
+    let grossAmt = 0; //grossAmt
+    let hstAmt = 0;
+    let disct = 0;
+    let trueFinal = 0;
+    for(let i of items){
+        let num = parseInt(i.innerHTML);
+        grossAmt += num * foodOrder[i.id.split("item")[1]-1].price;
+    }
+    grs.html(grossAmt);
+
+    if(grossAmt >= 100) disct = 0.3;
+    else if(grossAmt >= 70) disct = 0.3;
+    else if(grossAmt >= 30) disct = 0.3;
+    dsc.html(disct*100);
+
+    hstAmt = (grossAmt*(1-disct))*0.13;
+    hst.html(hstAmt.toFixed(2));
+
+    trueFinal = (grossAmt*(1-disct)) + hstAmt;
+    final.html(trueFinal.toFixed(2));
+ }
