@@ -277,23 +277,23 @@ function submitCheckout(){
      $("#menuItemList").append(`
             <div id="finalBill">
                 <div>
-                    <div>Gross Bill Amount</div>
+                    <div>Precio Parcial</div>
                     <div>$<span id="grossBill">0</span></div>
                 </div>
                 <div>
-                    <div>Discount</div>
+                    <div>Descuento</div>
                     <div><span id="discountAmt">0</span>%</div>
                 </div>
                 <div>
-                    <div>HST</div>
+                    <div>Impuestos</div>
                     <div>$<span id="hstAmt">0</span></div>
                 </div>
                 <div>
-                    <div>Total</div>
+                    <div>Total Final</div>
                     <div>$<span id="finalBillAmt">0</span></div>
                 </div>
             </div>
-            <button class="btnClass" id="backBtn">Back to Shopping</button>
+            <button class="btnClass" id="backBtn">Vuelve al menu</button>
      `);
      calcTotal();
      $("#backBtn").on("click", ()=>{window.location.href = "index.html";})
@@ -320,6 +320,8 @@ function submitCheckout(){
 
     event.stopPropagation();
  }
+
+//funcion de pagos
 
  function calcTotal(){
     let items = $(".sumItms");
