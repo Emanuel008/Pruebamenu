@@ -340,10 +340,10 @@ function calcTotal(){
     }
     grs.html(grossAmt);
 
-    if(grossAmt >= 100) disct = 0.3;
-    else if(grossAmt >= 70) disct = 0.3;
-    else if(grossAmt >= 30) disct = 0.3;
-    dsc.html(disct*100);
+    if(grossAmt >= 3000) disct = 0.3;
+    else if(grossAmt >= 5000) disct = 0.3;
+    else if(grossAmt >= 600) disct = 0.3;
+    dsc.html(disct*1000);
 
     hstAmt = (grossAmt*(1-disct))*0.13;
     hst.html(hstAmt.toFixed(2));
