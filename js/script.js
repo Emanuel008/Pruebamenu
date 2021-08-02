@@ -272,28 +272,28 @@ function submitCheckout(){
             </div>
         `);
         $(".item"+food.id).css("visibility", "visible");
-        }
+         }
      }
      $("#menuItemList").append(`
             <div id="finalBill">
                 <div>
-                    <div>Sin impuestos</div>
-                    <div>$<span id="sinimpuestos">0</span></div>
+                    <div>Gross Bill Amount</div>
+                    <div>$<span id="grossBill">0</span></div>
                 </div>
                 <div>
-                    <div>Descuentos</div>
-                    <div><span id="descuento">0</span>%</div>
+                    <div>Discount</div>
+                    <div><span id="discountAmt">0</span>%</div>
                 </div>
                 <div>
-                    <div>Impuesto</div>
-                    <div>$<span id="impuestos">0</span></div>
+                    <div>HST</div>
+                    <div>$<span id="hstAmt">0</span></div>
                 </div>
                 <div>
                     <div>Total</div>
-                    <div>$<span id="finalcuenta">0</span></div>
+                    <div>$<span id="finalBillAmt">0</span></div>
                 </div>
             </div>
-            <button class="btnClass" id="backBtn">Volver a la tienda</button>
+            <button class="btnClass" id="backBtn">Back to Shopping</button>
      `);
      calcTotal();
      $("#backBtn").on("click", ()=>{window.location.href = "index.html";})
@@ -306,31 +306,29 @@ function submitCheckout(){
     let itemQty = $("#"+itemName);
     let itemInt = parseInt(itemQty.html());
     itemInt = 0;
-    localStorage.setItem(itemName, itemInt);  
-    checkOut[itemName] = itemInt; 
+    localStorage.setItem(itemName, itemInt);  //Update local storage for item
+    checkOut[itemName] = itemInt; //Add to checkout Object
     if(itemInt <= 0){
-        itemInt = 0; 
+        itemInt = 0; //reduce possibility of values < 0
         delete(checkOut[itemName]);
         $("."+itemName).css("visibility", "hidden");
     }
-    
-     itemQty.html(itemInt);
-    
-     updateCheckout();
+    itemQty.html(itemInt);
 
-     event.stopPropagation();
+    if(isCartPage) calcTotal();
+    else updateCheckout();
+
+    event.stopPropagation();
  }
 
-//pagos
-
-function calcTotal(){
+ function calcTotal(){
     let items = $(".sumItms");
-    let imp = $("#impuestos");
-    let sin = $("#sinimpuesto");
-    let des = $("#descuento");
-    let final = $("#finalcuenta");
+    let hst = $("#hstAmt");
+    let grs = $("#grossBill");
+    let dsc = $("#discountAmt");
+    let final = $("#finalBillAmt");
 
-    let grossAmt = 0; //grossAmt
+    let grossAmt = 0;
     let hstAmt = 0;
     let disct = 0;
     let trueFinal = 0;
@@ -340,10 +338,10 @@ function calcTotal(){
     }
     grs.html(grossAmt);
 
-    if(grossAmt >= 3000) disct = 0.3;
-    else if(grossAmt >= 5000) disct = 0.3;
-    else if(grossAmt >= 600) disct = 0.3;
-    dsc.html(disct*1000);
+    if(grossAmt >= 100) disct = 0.3;
+    else if(grossAmt >= 70) disct = 0.2;
+    else if(grossAmt >= 30) disct = 0.1;
+    dsc.html(disct*100);
 
     hstAmt = (grossAmt*(1-disct))*0.13;
     hst.html(hstAmt.toFixed(2));
