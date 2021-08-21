@@ -65,7 +65,6 @@ $(()=>{
 
 // funciones
 
-
 function isInStock(stock){
     if(stock) return "In Stock";
     else return "Out of Stock";
@@ -80,6 +79,8 @@ function openClose(srt){
         $(`#${srt}`).css("padding", "10px 2px");
     }
 }
+
+// funciones de lista de items en el menu
 
 function populateMenu(){
     let addStyle = "";
