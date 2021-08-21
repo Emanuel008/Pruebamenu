@@ -13,7 +13,7 @@ body {
     font-family: 'Titillium Web', sans-serif;
 }
 
-/* HEADER & FOOTER START*/
+
 header,
 footer {
     background-color: #1A1517;
@@ -36,12 +36,12 @@ h2 {
     margin: 0;
 }
 
-/* Class Information */
+
 .classInformation {
     margin: 0 10px;
 }
 
-/* HEADER & FOOTER END */
+
 
 
 body {
