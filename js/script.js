@@ -307,10 +307,10 @@ function submitCheckout(){
     let itemQty = $("#"+itemName);
     let itemInt = parseInt(itemQty.html());
     itemInt = 0;
-    localStorage.setItem(itemName, itemInt);  //Update local storage for item
-    checkOut[itemName] = itemInt; //Add to checkout Object
+    localStorage.setItem(itemName, itemInt); 
+    checkOut[itemName] = itemInt; 
     if(itemInt <= 0){
-        itemInt = 0; //reduce possibility of values < 0
+        itemInt = 0;
         delete(checkOut[itemName]);
         $("."+itemName).css("visibility", "hidden");
     }
